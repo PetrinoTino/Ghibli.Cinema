@@ -1,0 +1,11 @@
+div{
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+h1,h2{
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+<!-- <button (click)="getMovies()">Get Movies</button> -->
+<div class="title-container">
+    <h2 class="titulli">{{title}}</h2>
+    <input 
+    type="text" placeholder="Search by title"
+    #searchTerm
+    (input)="getFilteredMovies(searchTerm.value)"
+    >
+</div>
+<!-- !==0 filmat jane ne faqe treg qe eshte ok -->
+<ng-container *ngIf="filteredMovies.length !== 0"; else loader>
+    <div class="movie-grid-container">
+        <div class="movie-card" *ngFor="let movie of filteredMovies">
+            <h3>{{ movie.title }}</h3>
+            <img [routerLink]="'/movies/' + movie.id"
+    
+    
+            [src]="movie.image" alt="img">
+            <p> Description: {{ movie.description }} </p>
+            <p> Director: {{ movie.director }} </p>
+            <p> Release Date: {{ movie.release_date }}</p>
+            <p> Rotten Tomato Score: {{ movie.rt_score }}% </p>
+        </div>
+    </div>
+</ng-container>
+<ng-template #loader>
+<app-loader>
+
+</app-loader>
+</ng-template>
