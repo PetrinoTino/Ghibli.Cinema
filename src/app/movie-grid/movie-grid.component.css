@@ -13,6 +13,7 @@
      border: 2px solid rgb(31, 30, 30);
     border-radius: 15px;
     padding: 10px; 
+    font-family: cursive;
 
 }
 h3{
@@ -29,4 +30,5 @@ img{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    
 }
